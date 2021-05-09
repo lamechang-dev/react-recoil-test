@@ -14,6 +14,9 @@ export const TodoItemCreator = () => {
   const setTodoList = useSetRecoilState(todoListState)
 
   const addItem = () => {
+    if (inputValue === "") {
+      return;
+    }
     setTodoList((oldTodoList) => [
       ...oldTodoList,
       {
